@@ -1,0 +1,55 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2em;
+  color: #004080;
+  margin-bottom: 1rem;
+  border-bottom: 4px solid #004080;
+  padding-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-top: 2rem;
+  color: #006699;
+  border-left: 5px solid #ccc;
+  padding-left: 0.5rem;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+blockquote#lyric {
+  background: #fff;
+  border-left: 5px solid #007acc;
+  padding: 1rem;
+  margin: 1rem 0;
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+  background: #f0f8ff;
+}
+
+csv-viewer {
+  display: block;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-x: auto;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}

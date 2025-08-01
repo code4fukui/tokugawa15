@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<link rel="stylesheet" href="style.css">
+<title>徳川15代オープンデータ</title></head><body>
+<h1>徳川15代オープンデータ</h1>
+
+<h2>徳川15代.csv</h2>
+<script type="module" src="https://code4sabae.github.io/js/csv-viewer.js"></script>
+<csv-viewer name="徳川15代" src=tokugawa15.csv></csv-viewer>
+
+<hr>
+
+<h2>組曲「徳川15代」歌詞</h2>
+→ <a href=https://suno.com/playlist/2627df91-d30a-4087-a599-3ef52bb3e927>徳川15代プレイリストを聞く</a></a>
+
+<blockquote id=lyric>
+</blockquote>
+
+<hr>
+<a href=src on GitHub</a><br>
+
+<script type="module">
+import { CSV } from "https://js.sabae.cc/CSV.js";
+
+const url = "./tokugawa15.csv";
+const data = await CSV.fetchJSON(url);
+console.log(data);
+
+const parts = "Verse,Chorus,Verse 2,Chorus,Bridge,Chorus".split(",");
+const ss = [];
+let idx = 0;
+for (const part of parts) {
+  ss.push(`[${part}]`);
+  const line = idx == 0 ? 4 : 3;
+  for (let i = 0; i < line; i++) {
+    const row = idx == 12 ? 3 : 2;
+    const ss2 = [];
+    for (let j = 0; j < row; j++) {
+      ss2.push(data[idx++].ふりがな);
+      if (idx == data.length) idx = 0;
+    }
+    ss.push(ss2.join(" "));
+  }
+  ss.push("");
+}
+lyric.innerHTML = ss.join("<br>");
+</script>
+
+
+</body></html>
